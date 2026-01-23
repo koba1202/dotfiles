@@ -8,6 +8,7 @@ config.window_background_opacity = 0.75
 config.macos_window_background_blur = 20
 config.front_end = "WebGpu"
 
+-- WindowsでのデフォルトシェルをPowerShellに設定
 config.default_prog = { 'powershell.exe' }
 
 ----------------------------------------------------
