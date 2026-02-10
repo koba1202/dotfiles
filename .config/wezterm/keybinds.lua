@@ -48,6 +48,8 @@ return {
         end),
       }),
     },
+    -- PowerShellの起動
+    {key = "P", mods = "LEADER|SHIFT", action = act.SpawnCommandInNewTab({ args = { "PowerShell.exe" } }),},
     -- コマンドパレット表示
     { key = "p", mods = "CTRL", action = act.ActivateCommandPalette },
     -- Tab移動
