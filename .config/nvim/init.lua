@@ -1,3 +1,2 @@
-vim.opt.clipboard = "unnamedplus"
-vim.keymap.set("i", "jk", "<Esc>")
+-- bootstrap lazy.nvim, LazyVim and your plugins
 require("config.lazy")

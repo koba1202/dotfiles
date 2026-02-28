@@ -1,5 +1,6 @@
 local wezterm = require("wezterm")
 local config = wezterm.config_builder()
+require("on")
 
 config.automatically_reload_config = true
 config.font_size = 11.0
