@@ -109,6 +109,9 @@ return {
 		{ key = "8", mods = "CTRL", action = act.ActivateTab(7) },
 		{ key = "9", mods = "CTRL", action = act.ActivateTab(-1) },
 
+		-- Claude Codeで改行できるようにする
+		{ key = "Enter", mods = "SHIFT", action = wezterm.action.SendString("\n") },
+
 		-- コマンドパレット
 		{ key = "p", mods = "SHIFT|CTRL", action = act.ActivateCommandPalette },
 		-- 設定再読み込み
@@ -148,8 +151,8 @@ return {
 			{ key = "k", mods = "NONE", action = act.CopyMode("MoveUp") },
 			{ key = "l", mods = "NONE", action = act.CopyMode("MoveRight") },
 			-- 最初と最後に移動
-			{ key = "^", mods = "NONE", action = act.CopyMode("MoveToStartOfLineContent") },
-			{ key = "$", mods = "NONE", action = act.CopyMode("MoveToEndOfLineContent") },
+			{ key = "^", mods = "SHIFT", action = act.CopyMode("MoveToStartOfLineContent") },
+			{ key = "$", mods = "SHIFT", action = act.CopyMode("MoveToEndOfLineContent") },
 			-- 左端に移動
 			{ key = "0", mods = "NONE", action = act.CopyMode("MoveToStartOfLine") },
 			{ key = "o", mods = "NONE", action = act.CopyMode("MoveToSelectionOtherEnd") },
