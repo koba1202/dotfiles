@@ -5,15 +5,15 @@ require("on")
 config.automatically_reload_config = true
 config.font_size = 11.0
 config.use_ime = true
-config.window_background_opacity = 0.75
+config.window_background_opacity = 0.7
 config.win32_system_backdrop = "Disable"
 config.front_end = "OpenGL"
 
 -- WindowsでのデフォルトシェルをPowerShellに設定
--- config.default_prog = { "PowerShell.exe" }
+config.default_prog = { "PowerShell.exe" }
 
 -- Ubuntuがいいならこっちを有効化して
-config.default_prog = { "wsl.exe", "--cd", "~" }
+-- config.default_prog = { "wsl.exe", "--cd", "~" }
 
 ----------------------------------------------------
 -- Tab
