@@ -21,7 +21,7 @@ return {
 		{
 			--workspaceの名前変更
 			key = "$",
-			mods = "LEADER",
+			mods = "LEADER | SHIFT",
 			action = act.PromptInputLine({
 				description = "(wezterm) Set workspace title:",
 				action = wezterm.action_callback(function(win, pane, line)
