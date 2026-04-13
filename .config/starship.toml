@@ -38,15 +38,25 @@ symbol = '─'
 [directory]
 truncation_length = 6
 truncation_symbol = ' '
-truncate_to_repo = false
 home_symbol = '~'
 read_only = ' 󰌾 '
+
 format = """
 [](fg:#80EBDF)\
 [$path]($style)\
 [$read_only]($read_only_style)\
 [](fg:#80EBDF)\
 """
+
+before_repo_root_style = 'bold fg:#313244 bg:#80EBDF'
+repo_root_style = 'bold fg:#313244 bg:#80EBDF'
+repo_root_format = """
+[](fg:#80EBDF)\
+[󰊢 /]($repo_root_style)[$repo_root]($repo_root_style)[$path]($style)\
+[$read_only]($read_only_style)\
+[](fg:#80EBDF)\
+"""
+
 style = 'bold fg:#313244 bg:#80EBDF'
 read_only_style = 'bold fg:#313244 bg:#80EBDF'
 

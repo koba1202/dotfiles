@@ -62,7 +62,7 @@ return {
 		-- Tab新規作成
 		{ key = "t", mods = "CTRL", action = act({ SpawnTab = "CurrentPaneDomain" }) },
 		-- Tabを閉じる
-		{ key = "w", mods = "CTRL", action = act({ CloseCurrentTab = { confirm = true } }) },
+		{ key = "w", mods = "CTRL|SHIFT", action = act({ CloseCurrentTab = { confirm = true } }) },
 		{ key = "L", mods = "LEADER|SHIFT", action = act({ MoveTabRelative = 1 }) },
 		{ key = "B", mods = "CTRL", action = act.EmitEvent("toggle-opacity") },
 
