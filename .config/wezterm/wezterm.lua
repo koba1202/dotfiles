@@ -50,6 +50,10 @@ config.colors = {
 		inactive_tab_edge = "none",
 	},
 }
+config.inactive_pane_hsb = {
+	saturation = 0.9,
+	brightness = 0.5,
+}
 
 -- タブの形をカスタマイズ
 -- タブの左側の装飾
