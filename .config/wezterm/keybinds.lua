@@ -112,6 +112,10 @@ return {
 		-- Claude Codeで改行できるようにする
 		{ key = "Enter", mods = "SHIFT", action = wezterm.action.SendString("\n") },
 
+    -- スクロール
+    { key = "p", mods = "ALT|CTRL", action = act.ScrollByPage(-0.5) },
+    { key = "n", mods = "ALT|CTRL", action = act.ScrollByPage(0.5) },
+
 		-- コマンドパレット
 		{ key = "p", mods = "SHIFT|CTRL", action = act.ActivateCommandPalette },
 		-- 設定再読み込み
@@ -188,6 +192,9 @@ return {
 			-- コピー
 			{ key = "y", mods = "NONE", action = act.CopyTo("Clipboard") },
 
+      -- 検索モードへ
+      { key = "/", mods = "NONE", action = act.Search("CurrentSelectionOrEmptyString") },
+
 			-- コピーモードを終了
 			{
 				key = "Enter",
@@ -198,5 +205,30 @@ return {
 			{ key = "c", mods = "CTRL|SHIFT", action = act.CopyMode("Close") },
 			{ key = "q", mods = "NONE", action = act.CopyMode("Close") },
 		},
+
+    serch_mode = {
+      { key = "Escape", mods = "NONE", action = act.CopyMode("Close") },
+      -- 検索結果にジャンプしたらコピーモードへ
+      {
+        key = "n",
+        mods = "CTRL",
+        action = act.Multiple({
+          act.CopyMode("NextMatch"),
+          act.ActivateCopyMode,
+        }),
+      },
+      {
+        key = "p",
+        mods = "CTRL",
+        action = act.Multiple({
+          act.CopyMode("PriorMatch"),
+          act.ActivateCopyMode,
+        }),
+      },
+      { key = "r", mods = "CTRL", action = act.CopyMode("CycleMatchType") },
+      { key = "u", mods = "CTRL", action = act.CopyMode("ClearPattern") },
+      -- 検索パターンを維持したままコピーモードへ
+      { key = "X", mods = "CTRL", action = act.ActivateCopyMode },
+    },
 	},
 }
