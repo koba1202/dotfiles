@@ -115,6 +115,8 @@ return {
     -- スクロール
     { key = "p", mods = "ALT|CTRL", action = act.ScrollByPage(-0.5) },
     { key = "n", mods = "ALT|CTRL", action = act.ScrollByPage(0.5) },
+    { key = "j", mods = "ALT|CTRL", action = act.ScrollByLine(1) },
+    { key = "k", mods = "ALT|CTRL", action = act.ScrollByLine(-1) },
 
 		-- コマンドパレット
 		{ key = "p", mods = "SHIFT|CTRL", action = act.ActivateCommandPalette },
