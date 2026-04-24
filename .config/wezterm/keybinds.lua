@@ -59,11 +59,11 @@ return {
 		{ key = "Tab", mods = "SHIFT|CTRL", action = act.ActivateTabRelative(-1) },
 		-- Tab入れ替え
 		{ key = "H", mods = "LEADER|SHIFT", action = act({ MoveTabRelative = -1 }) },
+    { key = "L", mods = "LEADER|SHIFT", action = act({ MoveTabRelative = 1 }) },
 		-- Tab新規作成
 		{ key = "t", mods = "CTRL", action = act({ SpawnTab = "CurrentPaneDomain" }) },
 		-- Tabを閉じる
 		{ key = "w", mods = "CTRL|SHIFT", action = act({ CloseCurrentTab = { confirm = true } }) },
-		{ key = "L", mods = "LEADER|SHIFT", action = act({ MoveTabRelative = 1 }) },
 		{ key = "B", mods = "CTRL", action = act.EmitEvent("toggle-opacity") },
 
 		-- 画面フルスクリーン切り替え
@@ -88,7 +88,7 @@ return {
 		{ key = "k", mods = "LEADER", action = act.ActivatePaneDirection("Up") },
 		{ key = "j", mods = "LEADER", action = act.ActivatePaneDirection("Down") },
 		-- Pane選択
-		{ key = "[", mods = "CTRL|SHIFT", action = act.PaneSelect },
+		{ key = "{", mods = "CTRL|SHIFT", action = act.PaneSelect },
 		-- 選択中のPaneのみ表示
 		{ key = "z", mods = "LEADER", action = act.TogglePaneZoomState },
 
@@ -129,6 +129,7 @@ return {
 			mods = "LEADER",
 			action = act.ActivateKeyTable({ name = "activate_pane", timeout_milliseconds = 1000 }),
 		},
+    { key = "l", mods = "ALT", action = act.ShowDebugOverlay },
 	},
 	-- キーテーブル
 	-- https://wezfurlong.org/wezterm/config/key-tables.html
