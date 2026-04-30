@@ -129,6 +129,8 @@ return {
 			mods = "LEADER",
 			action = act.ActivateKeyTable({ name = "activate_pane", timeout_milliseconds = 1000 }),
 		},
+		-- スクロールモード起動 leader + Space
+		{ key = "Space", mods = "LEADER", action = act.ActivateKeyTable({ name = "scroll_mode", one_shot = false }) },
     { key = "l", mods = "ALT", action = act.ShowDebugOverlay },
 	},
 	-- キーテーブル
@@ -209,7 +211,7 @@ return {
 			{ key = "q", mods = "NONE", action = act.CopyMode("Close") },
 		},
 
-    serch_mode = {
+    search_mode = {
       { key = "Escape", mods = "NONE", action = act.CopyMode("Close") },
       -- 検索結果にジャンプしたらコピーモードへ
       {
@@ -221,8 +223,8 @@ return {
         }),
       },
       {
-        key = "p",
-        mods = "CTRL",
+        key = "n",
+        mods = "CTRL|SHIFT",
         action = act.Multiple({
           act.CopyMode("PriorMatch"),
           act.ActivateCopyMode,
@@ -231,7 +233,29 @@ return {
       { key = "r", mods = "CTRL", action = act.CopyMode("CycleMatchType") },
       { key = "u", mods = "CTRL", action = act.CopyMode("ClearPattern") },
       -- 検索パターンを維持したままコピーモードへ
-      { key = "X", mods = "CTRL", action = act.ActivateCopyMode },
+      { key = "[", mods = "LEADER", action = act.ActivateCopyMode },
+    },
+
+    -- スクロールモード leader + Space
+    scroll_mode = {
+      -- 行単位スクロール
+      { key = "j", mods = "NONE", action = act.ScrollByLine(1) },
+      { key = "k", mods = "NONE", action = act.ScrollByLine(-1) },
+      -- 半ページスクロール
+      { key = "d", mods = "CTRL", action = act.ScrollByPage(0.5) },
+      { key = "u", mods = "CTRL", action = act.ScrollByPage(-0.5) },
+      { key = "n", mods = "NONE", action = act.ScrollByPage(0.5) },
+      { key = "p", mods = "NONE", action = act.ScrollByPage(-0.5) },
+      -- 1ページスクロール
+      { key = "f", mods = "CTRL", action = act.ScrollByPage(1) },
+      { key = "b", mods = "CTRL", action = act.ScrollByPage(-1) },
+      -- 最上部 / 最下部
+      { key = "g", mods = "NONE", action = act.ScrollToTop },
+      { key = "G", mods = "SHIFT", action = act.ScrollToBottom },
+      -- 終了
+      { key = "Escape", mods = "NONE", action = "PopKeyTable" },
+      { key = "q", mods = "NONE", action = "PopKeyTable" },
+      { key = "Enter", mods = "NONE", action = "PopKeyTable" },
     },
 	},
 }
