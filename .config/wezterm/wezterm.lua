@@ -3,11 +3,11 @@ local config = wezterm.config_builder()
 require("on")
 
 config.automatically_reload_config = true
-config.font_size = 11.0
+config.font_size = 10.0
 config.use_ime = true
 config.window_background_opacity = 0.7
 config.win32_system_backdrop = "Disable"
-config.front_end = "OpenGL"
+config.front_end = "WebGpu"
 
 -- WindowsでのデフォルトシェルをPowerShellに設定
 config.default_prog = { "PowerShell.exe" }
@@ -23,7 +23,7 @@ config.window_decorations = "RESIZE"
 -- タブバーの表示
 config.show_tabs_in_tab_bar = true
 -- タブが一つの時は非表示
-config.hide_tab_bar_if_only_one_tab = false
+config.hide_tab_bar_if_only_one_tab = true
 -- falseにするとタブバーの透過が効かなくなる
 -- config.use_fancy_tab_bar = false
 
