@@ -8,6 +8,15 @@ return {
       { "<leader>fE", false },
       { "<leader>t", "<cmd>Neotree toggle<cr>", desc = "NeoTree" },
     },
+    opts = {
+      filesystem = {
+        filtered_items = {
+          visible = true, -- 隠しファイルを表示する
+          hide_dotfiles = false, -- ドットファイルを隠さない
+          hide_gitignored = false, -- gitignore 対象も表示する
+        },
+      },
+    },
   },
 
   {

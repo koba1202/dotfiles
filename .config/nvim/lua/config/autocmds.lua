@@ -9,3 +9,16 @@
 
 require("config.django")
 require("config.filepath").setup()
+
+-- カラースキームを切り替えたら、次回起動時に復元できるようファイルへ保存
+vim.api.nvim_create_autocmd("ColorScheme", {
+  group = vim.api.nvim_create_augroup("persist_colorscheme", { clear = true }),
+  callback = function(args)
+    local path = vim.fn.stdpath("data") .. "/last-colorscheme"
+    local f = io.open(path, "w")
+    if f then
+      f:write(args.match)
+      f:close()
+    end
+  end,
+})
