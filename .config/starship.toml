@@ -26,11 +26,11 @@ $time\
 # ----------------------------------------------------
 [python]
 format = """
-[](fg:#ffcb6b)\
+[](fg:#957FB8)\
 [$virtualenv]($style)\
-[](fg:#ffcb6b)\
+[](fg:#957FB8)\
 """
-style = "bold fg:#313244 bg:#ffcb6b"
+style = "bold fg:#1F1F28 bg:#957FB8"
 
 [fill]
 symbol = '─'
@@ -42,46 +42,46 @@ home_symbol = '~'
 read_only = ' 󰌾 '
 
 format = """
-[](fg:#80EBDF)\
+[](fg:#7E9CD8)\
 [$path]($style)\
 [$read_only]($read_only_style)\
-[](fg:#80EBDF)\
+[](fg:#7E9CD8)\
 """
 
-before_repo_root_style = 'bold fg:#313244 bg:#80EBDF'
-repo_root_style = 'bold fg:#313244 bg:#80EBDF'
+before_repo_root_style = 'bold fg:#1F1F28 bg:#7E9CD8'
+repo_root_style = 'bold fg:#1F1F28 bg:#7E9CD8'
 repo_root_format = """
-[](fg:#80EBDF)\
+[](fg:#7E9CD8)\
 [󰊢 /]($repo_root_style)[$repo_root]($repo_root_style)[$path]($style)\
 [$read_only]($read_only_style)\
-[](fg:#80EBDF)\
+[](fg:#7E9CD8)\
 """
 
-style = 'bold fg:#313244 bg:#80EBDF'
-read_only_style = 'bold fg:#313244 bg:#80EBDF'
+style = 'bold fg:#1F1F28 bg:#7E9CD8'
+read_only_style = 'bold fg:#1F1F28 bg:#7E9CD8'
 
 [direnv]
 disabled = false
 format = """
-[](fg:#89dceb)\
+[](fg:#7FB4CA)\
 [$symbol$allowed]($style)\
-[](fg:#89dceb)\
+[](fg:#7FB4CA)\
 """
-style = "bold fg:#313244 bg:#89dceb"
+style = "bold fg:#1F1F28 bg:#7FB4CA"
 
 [git_branch]
 symbol = ""
-style = "fg:#769ff0 bg:#1d2230"
+style = "fg:#98BB6C bg:#223249"
 format = """
-[](fg:#1d2230)\
+[](fg:#223249)\
 [$symbol $branch]($style)\
 """
 
 [git_status]
-style = "fg:#769ff0 bg:#1d2230"
+style = "fg:#98BB6C bg:#223249"
 format = """
 [$all_status$ahead_behind]($style)\
-[](fg:#1d2230)\
+[](fg:#223249)\
 """
 
 # ----------------------------------------------------
@@ -89,13 +89,13 @@ format = """
 # ----------------------------------------------------
 [cmd_duration]
 min_time = 1
-style = 'fg:#e0af68'
+style = 'fg:#E6C384'
 format = "[ $duration]($style)" # nf-pl-right_soft_divider, nf-mdi-clock
 
 [time]
 disabled = false
 time_format = "%R" # Hour:Minute Format
-format = '[[  $time](fg:#a0a9cb)]($style)'
+format = '[[  $time](fg:#DCD7BA)]($style)'
 
 # ----------------------------------------------------
 # prompt module
