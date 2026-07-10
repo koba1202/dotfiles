@@ -1,0 +1,83 @@
+{
+  "env": {
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
+  },
+  "permissions": {
+    "allow": [
+      "Bash(npm run *)",
+      "Bash(git status)",
+      "Bash(git pull *)",
+      "Bash(python *)",
+      "Bash(pytest *)",
+      "Bash(ls *)",
+      "Bash(cat *)",
+      "Bash(echo *)",
+      "Bash(touch *)",
+      "Bash(mkdir *)",
+      "Bash(cp *)",
+      "Read",
+      "Edit",
+      "Write"
+    ],
+    "deny": [
+      "Bash(sudo *)",
+      "Bash(rm -rf *)",
+      "Bash(wget *)",
+      "Bash(chmod 777 *)",
+      "Read(./.env)",
+      "Read(./.env.*)",
+      "Read(./secrets/**)",
+      "Read(./config/credentials.json)",
+      "Read(**/*.pem)",
+      "Read(**/*.key)"
+    ],
+    "ask": [
+      "Bash(pip install *)",
+      "Bash(pip uninstall *)",
+      "Bash(uv add *)",
+      "Bash(uv unadd *)",
+      "Bash(rm *)",
+      "Bash(mv *)",
+      "Bash(git push *)",
+      "Bash(curl *)"
+    ],
+    "defaultMode": "auto"
+  },
+  "model": "sonnet",
+  "hooks": {
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell.exe -NoProfile -ExecutionPolicy Bypass -Command \"Import-Module BurntToast; New-BurntToastNotification -Text 'Claude Code', '処理が完了しました'\""
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell.exe -NoProfile -ExecutionPolicy Bypass -Command \"Import-Module BurntToast; New-BurntToastNotification -Text 'Claude Code', '処理が完了しました'\""
+          }
+        ]
+      }
+    ]
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "npx ccusage@latest statusline"
+  },
+  "sandbox": {
+    "enabled": true,
+    "allowUnsandboxedCommands": false
+  },
+  "autoUpdatesChannel": "latest",
+  "tui": "default",
+  "autoCompactEnabled": false,
+  "skipAutoPermissionPrompt": true
+}

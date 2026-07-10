@@ -1,1 +1,12 @@
 nvim-linux-x86_64.appimage
+
+# .claude/ 配下はホワイトリスト方式（設定ファイルのみ管理し、それ以外は無視）
+.claude/*
+!.claude/CLAUDE.md
+!.claude/settings.json
+!.claude/skills/
+!.claude/hooks/
+!.claude/statusline.js
+!.claude/statusline.ps1
+!.claude/statusline.py
+!.claude/statusline.sh
