@@ -43,7 +43,7 @@
     ],
     "defaultMode": "auto"
   },
-  "model": "sonnet",
+  "model": "opus",
   "hooks": {
     "Stop": [
       {
@@ -79,5 +79,26 @@
   "autoUpdatesChannel": "latest",
   "tui": "default",
   "autoCompactEnabled": false,
-  "skipAutoPermissionPrompt": true
+  "skipAutoPermissionPrompt": true,
+  "spinnerVerbs": {
+    "mode": "replace",
+    "verbs": [
+      "🍩 ポン・デ・リングをもちもち中",
+      "🍫 オールドファッションをかじりながら思考中",
+      "😇 エンゼルフレンチを味わっている",
+      "🥐 フレンチクルーラーがふわっと到着",
+      "🍯 ハニーディップに手が伸びている",
+      "🍫 チョコファッションをコーティング中",
+      "🍩 ドーナツポップをつまみ食い中",
+      "🥥 ココナツチョコをザクザク処理中",
+      "🎁 ミスドの箱を選びに悩んでいる",
+      "☕ ホットコーヒーおかわり待ち中",
+      "🍜 ミスドの汁そばをすすっている",
+      "🥢 熱々の点心を蒸している",
+      "✨ ゴールデンチョコをまとっている",
+      "🍩 エンゼルクリームがとろけ中",
+      "🎫 ポイントカードを差し出している",
+      "🍩 misdo福袋の中身を数えている"
+    ]
+  }
 }
