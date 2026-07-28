@@ -40,4 +40,7 @@ New-DotfileSymlink -Path "$HOME\.config" -Target "$DotfilesDir\.config"
 # Windows 版 Neovim は ~/.config を見ないため個別にリンクする
 New-DotfileSymlink -Path "$env:LOCALAPPDATA\nvim" -Target "$DotfilesDir\.config\nvim"
 
+# PowerShell の起動時プロファイル
+New-DotfileSymlink -Path $PROFILE -Target "$DotfilesDir\PowerShell_profile.ps1"
+
 Write-Host "Done!"
