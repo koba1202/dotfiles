@@ -12,6 +12,17 @@ config.front_end = "WebGpu"
 -- WindowsでのデフォルトシェルをPowerShellに設定
 config.default_prog = { "PowerShell.exe" }
 
+----------------------------------------------------
+-- Bell (on.lua の bell ハンドラでトースト通知を出す)
+----------------------------------------------------
+-- ビープ音は鳴らさず、カーソル点滅とトースト通知のみにする
+config.audible_bell = "Disabled"
+config.visual_bell = {
+	fade_in_duration_ms = 75,
+	fade_out_duration_ms = 75,
+	target = "CursorColor",
+}
+
 -- Ubuntuがいいならこっちを有効化して
 -- config.default_prog = { "wsl.exe", "--cd", "~" }
 

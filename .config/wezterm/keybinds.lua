@@ -73,7 +73,19 @@ return {
 		-- { key = 'X', mods = 'LEADER', action = act.ActivateKeyTable{ name = 'copy_mode', one_shot =false }, },
 		{ key = "[", mods = "LEADER", action = act.ActivateCopyMode },
 		-- コピー
-		{ key = "c", mods = "CTRL", action = act.CopyTo("Clipboard") },
+    {
+      key = "c",
+      mods = "CTRL",
+      action = wezterm.action_callback(function(window, pane)
+        local sel = window:get_selection_text_for_pane(pane)
+        if sel and sel ~= "" then
+          window:perform_action(act.CopyTo("ClipboardAndPrimarySelection"), pane)
+        else
+          -- 選択なしなら素通し
+          window:perform_action(act.SendKey({ key = "c", mods = "CTRL" }), pane)
+        end
+      end),
+    },
 		-- 貼り付け
 		{ key = "v", mods = "CTRL", action = act.PasteFrom("Clipboard") },
 
@@ -88,9 +100,13 @@ return {
 		{ key = "k", mods = "LEADER", action = act.ActivatePaneDirection("Up") },
 		{ key = "j", mods = "LEADER", action = act.ActivatePaneDirection("Down") },
 		-- Pane選択
-		{ key = "{", mods = "CTRL|SHIFT", action = act.PaneSelect },
+    -- nvimのEscキーバインドと競合したので一旦コメントアウト
+		-- { key = "{", mods = "CTRL|SHIFT", action = act.PaneSelect },
 		-- 選択中のPaneのみ表示
 		{ key = "z", mods = "LEADER", action = act.TogglePaneZoomState },
+    -- Paneの入れ替え・回転
+    { key = "s", mods = "LEADER|SHIFT", action = act.PaneSelect({ mode = "SwapWithActive"}) },
+    { key = "o", mods = "CTRL|SHIFT", action = act.RotatePanes("Clockwise") },
 
 		-- フォントサイズ切替
 		{ key = "+", mods = "CTRL", action = act.IncreaseFontSize },
