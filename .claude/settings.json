@@ -43,31 +43,7 @@
     ],
     "defaultMode": "auto"
   },
-  "model": "sonnet",
-  "hooks": {
-    "Stop": [
-      {
-        "matcher": "",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "powershell.exe -NoProfile -ExecutionPolicy Bypass -Command \"Import-Module BurntToast; New-BurntToastNotification -Text 'Claude Code', '処理が完了しました'\""
-          }
-        ]
-      }
-    ],
-    "Notification": [
-      {
-        "matcher": "",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "powershell.exe -NoProfile -ExecutionPolicy Bypass -Command \"Import-Module BurntToast; New-BurntToastNotification -Text 'Claude Code', '処理が完了しました'\""
-          }
-        ]
-      }
-    ]
-  },
+  "model": "opus",
   "statusLine": {
     "type": "command",
     "command": "npx ccusage@latest statusline"
@@ -81,9 +57,8 @@
     "verbs": [
       "🐞 覚悟はいいか？オレはできてる",
       "🌟 このジョルノ・ジョバァーナには夢がある",
-      "🌟 だが それが「いい」…",
       "👊 無駄ァッ！無駄無駄無駄ァッ！",
-      "🤵 「任務(ミッション)」は遂行する 「成功(サクセス)」は掴む",
+      "🤵 「任務(ミッション)」は遂行する、部下も守る",
       "🤵 オレは『結果』だけを求めてはいない",
       "👅 この味は！…ウソをついてる『味』だぜ",
       "🎯 だが4は嫌だ！4以外にしろ！",
@@ -98,6 +73,7 @@
       "無駄無駄無駄無駄無駄無駄無駄無駄"
     ]
   },
+  "preferredNotifChannel": "terminal_bell",
   "autoUpdatesChannel": "latest",
   "tui": "default",
   "autoCompactEnabled": false,
