@@ -10,7 +10,7 @@ wezterm.on("toggle-opacity", function(window, _)
     overrides.win32_system_backdrop = "Disable"
 
   elseif overrides.window_background_opacity == 0.9 then
-    overrides.window_background_opacity = 0.8
+    overrides.window_background_opacity = 0.6
     overrides.win32_system_backdrop = "Acrylic"
 
 	else
