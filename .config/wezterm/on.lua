@@ -21,6 +21,19 @@ wezterm.on("toggle-opacity", function(window, _)
 	window:set_config_overrides(overrides)
 end)
 
+-- SSH先のプロンプトがタイトル設定シーケンスをBEL終端で送ってくる(Debian/Ubuntu系.bashrcの既定)ため、
+-- コマンド実行のたびにbellイベントが誤発火する。paneごとに直近の発火から一定時間内の連発を間引く。
+local BELL_DEBOUNCE_SECONDS = 3
+local last_bell_at = {}
+
 wezterm.on("bell", function(window, pane)
+	local pane_id = pane:pane_id()
+	local now = os.time()
+	local last = last_bell_at[pane_id]
+	if last and (now - last) < BELL_DEBOUNCE_SECONDS then
+		return
+	end
+	last_bell_at[pane_id] = now
+
 	window:toast_notification("Wezterm", pane:get_title() .. "が完了/通知", nil, 4000)
 end)

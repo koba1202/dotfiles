@@ -210,6 +210,10 @@ return {
 			{ key = "v", mods = "NONE", action = act.CopyMode({ SetSelectionMode = "Cell" }) },
 			{ key = "v", mods = "CTRL", action = act.CopyMode({ SetSelectionMode = "Block" }) },
 			{ key = "V", mods = "NONE", action = act.CopyMode({ SetSelectionMode = "Line" }) },
+      -- プロンプト単位の移動
+			{ key = "z", mods = "NONE", action = act.CopyMode({ SetSelectionMode = "SemanticZone" }) },
+			{ key = "{", mods = "NONE", action = act.CopyMode("MoveBackwardSemanticZone") },
+			{ key = "}", mods = "NONE", action = act.CopyMode("MoveForwardSemanticZone") },
 			-- コピー
 			{ key = "y", mods = "NONE", action = act.CopyTo("Clipboard") },
 
@@ -268,6 +272,9 @@ return {
       -- 最上部 / 最下部
       { key = "g", mods = "NONE", action = act.ScrollToTop },
       { key = "G", mods = "SHIFT", action = act.ScrollToBottom },
+      -- プロンプト単位の移動
+      { key = "[", mods = "NONE", action = act.ScrollToPrompt(-1) },
+      { key = "]", mods = "NONE", action = act.ScrollToPrompt(1) },
       -- 終了
       { key = "Escape", mods = "NONE", action = "PopKeyTable" },
       { key = "q", mods = "NONE", action = "PopKeyTable" },
