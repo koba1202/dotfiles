@@ -44,6 +44,11 @@
     "defaultMode": "auto"
   },
   "model": "opus",
+  "skillOverrides": {
+    "frontend-design": "off",
+    "spinner": "off",
+    "writing-guide": "off"
+  },
   "statusLine": {
     "type": "command",
     "command": "npx ccusage@latest statusline"
@@ -73,9 +78,10 @@
       "無駄無駄無駄無駄無駄無駄無駄無駄"
     ]
   },
-  "preferredNotifChannel": "terminal_bell",
   "autoUpdatesChannel": "latest",
   "tui": "default",
+  "autoMemoryEnabled": true,
+  "preferredNotifChannel": "terminal_bell",
   "autoCompactEnabled": false,
   "skipAutoPermissionPrompt": true
 }

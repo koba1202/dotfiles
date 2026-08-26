@@ -1,4 +1,3 @@
-
 ---
 name: gekidume-review
 description: PR 作成前に、diff に含まれる変更内容の理解度を厳しく検証する。実装理由・アーキテクチャ選定・動作原理を質問攻めし、ユーザーが完全に理解していないコードを PR に含めることを防ぐ。PR を作る前の最終確認、diff の理解度チェック、「激詰めレビュー」「gekidume-review」「PR 前に詰めて」「grill me before PR」などと言及されたときに使う。
