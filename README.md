@@ -15,3 +15,6 @@ cd dotfiles
 
 シンボリックリンクの作成には管理者権限、または Windows の開発者モードの有効化が必要です。
 
+### 例) yaziのシンボリックリンク作成
+
+`New-Item -ItemType SymbolicLink -Path "$HOME/.config/yazi" -Target "$HOME/dotfiles/yazi"`
