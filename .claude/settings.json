@@ -51,7 +51,9 @@
   },
   "statusLine": {
     "type": "command",
-    "command": "npx ccusage@latest statusline"
+    "command": "node \"C:/Users/hirakoba/.claude/hooks/statusline.js\"",
+    "padding": 0,
+    "refreshInterval": 60
   },
   "sandbox": {
     "enabled": true,
