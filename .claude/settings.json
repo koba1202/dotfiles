@@ -15,6 +15,7 @@
       "Bash(touch *)",
       "Bash(mkdir *)",
       "Bash(cp *)",
+      "Bash(grep *)",
       "Read",
       "Edit",
       "Write"
