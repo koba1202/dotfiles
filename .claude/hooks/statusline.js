@@ -86,7 +86,14 @@ function runCcusage(rawInput) {
     let out = "";
     const done = (v) => resolve(v);
     const timer = setTimeout(() => {
-      child.kill();
+      // Windows では shell 経由の cmd.exe しか止まらないため、プロセスツリーごと終了させる
+      if (process.platform === "win32" && child.pid) {
+        try {
+          spawn("taskkill", ["/pid", String(child.pid), "/T", "/F"], { stdio: "ignore", windowsHide: true });
+        } catch {}
+      } else {
+        child.kill();
+      }
       done(out.trim().split("\n")[0] || "");
     }, 5000);
 
@@ -112,6 +119,8 @@ process.stdin.on("end", async () => {
   }
 
   const [usage, limits] = [await runCcusage(raw), formatLimits(data.rate_limits)];
-  const line = [usage, limits].filter(Boolean).join(" \n ");
-  process.stdout.write(line + "\n");
+  // 1行目: ccusage / 2行目: レート制限バー
+  const line = [usage.trimEnd(), limits].filter(Boolean).join("\n");
+  // 子プロセスが残っていても待たずに終了する（終了しないと Claude Code が表示を確定できない）
+  process.stdout.write(line + "\n", () => process.exit(0));
 });
