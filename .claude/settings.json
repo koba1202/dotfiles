@@ -52,7 +52,7 @@
   },
   "statusLine": {
     "type": "command",
-    "command": "node \"C:/Users/hirakoba/.claude/hooks/statusline.js\"",
+    "command": "node \"$HOME/.claude/hooks/statusline.js\"",
     "padding": 0,
     "refreshInterval": 60
   },
